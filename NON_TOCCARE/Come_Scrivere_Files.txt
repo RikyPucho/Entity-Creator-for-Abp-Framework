@@ -1,0 +1,11 @@
+PER IMPLEMENTARE UNA VARIABILE METTERE +' NOME VARIABILE'++
+ESEMPIO:
+yooooo+'prog'++
+OPPURE:
+yooooo+'prog++
+
+
+QUANDO SI FINISCE IL FILE AGGIUGNERE +'
+ESEMPIO:
+ksbe vfrfev +'entita+ rvrbbe
+    kgn+'

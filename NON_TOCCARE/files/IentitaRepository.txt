@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Volo.Abp.Domain.Repositories;
+
++'ns++
+
+public interface +'Rep++ : IRepository<+'entita++, Guid>
+{
+    Task<+'entita++> FindByNameAsync(string name);
+
+    Task<List<+'entita++>> GetListAsync(
+        int skipCount,
+        int maxResultCount,
+        string sorting,
+        string filter = null
+        );
+}
++'

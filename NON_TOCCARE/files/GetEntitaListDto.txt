@@ -1,0 +1,8 @@
+using Volo.Abp.Application.Dtos;
+
++'ns++
+
+public class Get+'entita++ListDto : PagedAndSortedResultRequestDto
+{
+    public string? Filter { get; set; }
+}+'

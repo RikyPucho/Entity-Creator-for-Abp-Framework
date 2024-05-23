@@ -1,0 +1,15 @@
++'usi++
+
+public DbSet<+'entita++> +'entitPlu++ { get; set; }
+
+
+builder.Entity<+'entita++>(b =>
+{
+    b.ToTable(+'prog++Consts.DbTablePrefix + "+'entitPlu++",
+        +'prog++Consts.DbSchema);
+    b.ConfigureByConvention();
+    b.Property(x => x.+'campoZero++)
+        .IsRequired()
+        .HasMaxLength(+'entita++Consts.MaxNameLength);
+    b.HasIndex(x => x.+'campoZero++);
+});+'

@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using +'prog++.Permissions;
+using Microsoft.AspNetCore.Authorization;
+using Volo.Abp.Application.Dtos;
+using Volo.Abp.Domain.Repositories;
+
++'ns++
+
+[Authorize(+'prog++Permissions.+'entitPlu++.Default)]
+public class +'entita++AppService : +'prog++AppService, I+'entita++AppService
+{
+    private readonly +'Rep++ +'rep_++;
+    private readonly +'Man++ +'man_++;
+
+    public +'entita++AppService(
+        +'Rep++ +'rep-++,
+        +'Man++ +'man-++)
+    {
+        +'rep_++ = +'rep-++;
+        +'man_++ = +'man-++;
+    }
+
+    public async Task<+'dto++> GetAsync(Guid id)
+    {
+        var +'entitL++ = await +'rep_++.GetAsync(id);
+        return ObjectMapper.Map<+'entita++, +'dto++>(+'entitL++);
+    }
+
+    public async Task<PagedResultDto<+'dto++>> GetListAsync(Get+'entita++ListDto input)
+    {
+        if (input.Sorting.IsNullOrWhiteSpace())
+        {
+            input.Sorting = nameof(+'entita++.+'campoZero++);
+        }
+
+        var +'entitPL++ = await +'rep_++.GetListAsync(
+            input.SkipCount,
+            input.MaxResultCount,
+            input.Sorting,
+            input.Filter
+        );
+
+        var totalCount = input.Filter == null
+            ? await +'rep_++.CountAsync()
+            : await +'rep_++.CountAsync(
+                +'entitL++ => +'entitL++.+'campoZero++.Contains(input.Filter));
+
+        return new PagedResultDto<+'dto++>(
+            totalCount,
+            ObjectMapper.Map<List<+'entita++>, List<+'dto++>>(+'entitPL++)
+        );
+    }
+    [Authorize(+'prog++Permissions.+'entitPlu++.Create)]
+    public async Task<+'dto++> CreateAsync(Create+'dto++ input)
+    {
+        var +'entitL++ = await +'man_++.CreateAsync(
++'campiInp++        );
+
+        await +'rep_++.InsertAsync(+'entitL++);
+
+        return ObjectMapper.Map<+'entita++, +'dto++>(+'entitL++);
+    }
+
+    [Authorize(+'prog++Permissions.+'entitPlu++.Edit)]
+    public async Task UpdateAsync(Guid id, Update+'dto++ input)
+    {
+        var +'entitL++ = await +'rep_++.GetAsync(id);
+
+        if (+'entitL++.+'campoZero++ != input.+'campoZero++)
+        {
+            await +'man_++.ChangeNameAsync(+'entitL++, input.+'campoZero++);
+        }
+
++'campiUpd++
+
+        await +'rep_++.UpdateAsync(+'entitL++);
+    }
+
+    [Authorize(+'prog++Permissions.+'entitPlu++.Delete)]
+    public async Task DeleteAsync(Guid id)
+    {
+        await +'rep_++.DeleteAsync(id);
+    }
+
+}+'

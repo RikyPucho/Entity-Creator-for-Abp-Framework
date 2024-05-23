@@ -1,0 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
++'ns++
+
+public static class +'entita++Consts
+{
+    public const int MaxNameLength = 32;
+}
++'

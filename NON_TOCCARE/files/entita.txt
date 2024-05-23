@@ -1,0 +1,35 @@
+using System;
+using JetBrains.Annotations;
+using Volo.Abp;
+using Volo.Abp.Domain.Entities.Auditing;
+
++'ns++
+
+public class +'entita++ : FullAuditedAggregateRoot<Guid>
+{
++'campiGet++
+
+    private +'entita++() { }
+
+    internal +'entita++(
+        Guid id, +'campiPar++) : base(id)
+    {
++'campiCost++
+    }
+
+    internal +'entita++ ChangeName(string name)
+    {
+        SetName(name);
+        return this;
+    }
+
+    private void SetName(string name)
+    {
+        +'campoZero++ = Check.NotNullOrWhiteSpace(
+            name,
+            nameof(name),
+            maxLength: +'entita++Consts.MaxNameLength
+            );
+    }
+
+}+'

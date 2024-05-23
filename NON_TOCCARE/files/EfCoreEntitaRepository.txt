@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Dynamic.Core;
+using System.Threading.Tasks;
+using +'prog++.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore;
+
++'ns++
+
+public class EfCore+'entita++Repository
+    : EfCoreRepository<+'prog++DbContext, +'entita++, Guid>,
+        +'Rep++
+{
+    public EfCore+'entita++Repository(
+        IDbContextProvider<+'prog++DbContext> dbContextProvider)
+        : base(dbContextProvider)
+    {
+    }
+
+    public async Task<+'entita++> FindByNameAsync(string name)
+    {
+        var dbSet = await GetDbSetAsync();
+        return await dbSet.FirstOrDefaultAsync(+'entitL++ => +'entitL++.+'campoZero++ == name);
+    }
+
+    public async Task<List<+'entita++>> GetListAsync(
+        int skipCount,
+        int maxResultCount,
+        string sorting,
+        string filter = null)
+    {
+        var dbSet = await GetDbSetAsync();
+        return await dbSet
+            .WhereIf(
+                !filter.IsNullOrWhiteSpace(),
+                +'entitL++ => +'entitL++.+'campoZero++.Contains(filter)
+                )
+            .OrderBy(sorting)
+            .Skip(skipCount)
+            .Take(maxResultCount)
+            .ToListAsync();
+    }
+}+'

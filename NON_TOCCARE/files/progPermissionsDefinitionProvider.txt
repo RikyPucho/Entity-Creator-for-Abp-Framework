@@ -1,0 +1,5 @@
+var +'entitPL++Permission = +'prog++Group.AddPermission(+'prog++Permissions.+'entitPlu++.Default, L("Permission:+'entitPlu++"));
+    +'entitPL++Permission.AddChild(+'prog++Permissions.+'entitPlu++.Create, L("Permission:+'entitPlu++.Create"));
+    +'entitPL++Permission.AddChild(+'prog++Permissions.+'entitPlu++.Edit, L("Permission:+'entitPlu++.Edit"));
+    +'entitPL++Permission.AddChild(+'prog++Permissions.+'entitPlu++.Delete, L("Permission:+'entitPlu++.Delete"));
++'

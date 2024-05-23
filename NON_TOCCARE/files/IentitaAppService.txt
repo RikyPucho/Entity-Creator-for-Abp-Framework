@@ -1,0 +1,19 @@
+using System;
+using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
+using Volo.Abp.Application.Services;
+
++'ns++
+
+public interface I+'entita++AppService : IApplicationService
+{
+    Task<+'dto++> GetAsync(Guid id);
+
+    Task<PagedResultDto<+'dto++>> GetListAsync(Get+'entita++ListDto input);
+
+    Task<+'dto++> CreateAsync(Create+'dto++ input);
+
+    Task UpdateAsync(Guid id, Update+'dto++ input);
+
+    Task DeleteAsync(Guid id);
+}+'

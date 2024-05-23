@@ -1,0 +1,87 @@
+import { Component, OnInit } from '@angular/core';
+import { ListService, PagedResultDto } from '@abp/ng.core';
+import { +'entita++Service, +'dto++ } from '@proxy/+'entitPL++ ';//togli lo spazio
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
+
+@Component({
+  selector: 'app-+'entitL++ ',//togli lo spazio
+  templateUrl: './+'entitL++.component.html',
+  styleUrls: ['./+'entitL++.component.scss'],
+  providers: [ListService],
+})
+export class +'entita++Component implements OnInit {
+  +'entitL++ = { items: [], totalCount: 0 } as PagedResultDto<+'dto++>;
+
+  isModalOpen = false;
+
+  form: FormGroup;
+
+  selected+'entita++ = {} as +'dto++;
+
+  constructor(
+    public readonly list: ListService,
+    private +'entitL++Service: +'entita++Service,
+    private fb: FormBuilder,
+    private confirmation: ConfirmationService
+  ) {}
+
+  ngOnInit(): void {
+    const +'entitL++StreamCreator = (query) => this.+'entitL++Service.getList(query);
+
+    this.list.hookToQuery(+'entitL++StreamCreator).subscribe((response) => {
+      this.+'entitL++ = response;
+    });
+  }
+
+  create+'entita++() {
+    this.selected+'entita++ = {} as +'dto++;
+    this.buildForm();
+    this.isModalOpen = true;
+  }
+
+  edit+'entita++(id: string) {
+    this.+'entitL++Service.get(id).subscribe((+'entitL++) => {
+      this.selected+'entita++ = +'entitL++;
+      this.buildForm();
+      this.isModalOpen = true;
+    });
+  }
+
+  buildForm() {
+    this.form = this.fb.group({
++'campiForm++
+    });
+  }
+
+  save() {
+    if (this.form.invalid) {
+      return;
+    }
+
+    if (this.selected+'entita++.id) {
+      this.+'entitL++Service
+        .update(this.selected+'entita++.id, this.form.value)
+        .subscribe(() => {
+          this.isModalOpen = false;
+          this.form.reset();
+          this.list.get();
+        });
+    } else {
+      this.+'entitL++Service.create(this.form.value).subscribe(() => {
+        this.isModalOpen = false;
+        this.form.reset();
+        this.list.get();
+      });
+    }
+  }
+
+  delete(id: string) {
+    this.confirmation.warn('::AreYouSureToDelete', '::AreYouSure')
+        .subscribe((status) => {
+          if (status === Confirmation.Status.confirm) {
+            this.+'entitL++Service.delete(id).subscribe(() => this.list.get());
+          }
+	    });
+  }
+}+'

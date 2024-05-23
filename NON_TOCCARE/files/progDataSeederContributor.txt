@@ -1,0 +1,34 @@
++'usi++
+
+
+
+{
+    private readonly +'Rep++ +'rep_++;
+    private readonly +'Man++ +'man_++;
+
+
+    (
+        +'Rep++ +'rep-++
+        +'Man++ +'man-++
+    )
+    {
+        +'rep_++ = +'rep-++
+        +'man_++ = +'man-++
+    }
+
+    {
+            if(await +'rep_++.GetCountAsync() <= 0)
+            {
+                await +'rep_++.insertAsync(
+                    await +'man_++.CreateAsync(
+                        //inserisci i dati
+                    )
+                );
+                await +'rep_++.insertAsync(
+                    await +'man_++.CreateAsync(
+                        //inserisci i dati
+                    )
+                );
+            }
+    }
+}

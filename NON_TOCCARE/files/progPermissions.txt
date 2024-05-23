@@ -1,0 +1,9 @@
+public const string GroupName = "+'prog++";
+
+    public static class +'entitPlu++
+    {
+        public const string Default = GroupName + ".+'entitPlu++";
+        public const string Create = Default + ".Create";
+        public const string Edit = Default + ".Edit";
+        public const string Delete = Default + ".Delete";
+    }+'

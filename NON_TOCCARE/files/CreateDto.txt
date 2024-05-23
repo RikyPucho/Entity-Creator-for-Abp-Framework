@@ -1,0 +1,11 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
++'ns++
+
+public class Create+'dto++
+{
+    [Required]
+    [StringLength(+'entita++Consts.MaxNameLength)]
++'campiCreat++
+}+'

@@ -1,0 +1,48 @@
+using System;
+using System.Threading.Tasks;
+using JetBrains.Annotations;
+using Volo.Abp;
+using Volo.Abp.Domain.Services;
+
++'ns++
+
+public class +'entita++Manager : DomainService
+{
+    private readonly +'Rep++ +'rep_++;
+
+    public +'entita++Manager (+'Rep++ +'rep-++)
+    {
+        +'rep_++ = +'rep-++;
+    }
+
+    public async Task<+'entita++> CreateAsync(
++'campiPaNul++)
+    {
+        Check.NotNullOrWhiteSpace(+'campoZL++, nameof(+'campoZL++));
+
+        var existing+'entita++ = await +'rep_++.FindByNameAsync(+'campoZL++);
+        if (existing+'entita++ != null) 
+        {
+            throw new +'entita++AlreadyExistsException(+'campoZL++);
+        }
+
+        return new +'entita++(
+            GuidGenerator.Create(),
++'campiEle++);
+    }
+    public async Task ChangeNameAsync(
+        +'entita++ +'entitL++,
+        string newName)
+    {
+        Check.NotNull(+'entitL++, nameof(+'entitL++));
+        Check.NotNullOrWhiteSpace(newName, nameof(newName));
+
+        var existing+'entita++ = await +'rep_++.FindByNameAsync(newName);
+        if (existing+'entita++ != null && existing+'entita++.Id != +'entitL++.Id) 
+        {
+            throw new +'entita++AlreadyExistsException(newName);
+        }
+
+        +'entitL++.ChangeName(newName);
+    }
+}+'

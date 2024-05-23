@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Volo.Abp;
+
++'ns++
+
+public class +'entita++AlreadyExistsException : BusinessException
+{
+    public +'entita++AlreadyExistsException(string name) : base(+'prog++DomainErrorCodes.+'entita++AlreadyExists)
+    {
+        WithData("name", name);
+    }
+}+'

@@ -1,0 +1,18 @@
+//inglese
+"+'entita++:00001": "There is already an +'entitL++ with the same name: {+'campoZero++}",
+"Permission:+'entitPlu++": "+'entita++ Management",
+"Permission:+'entitPlu++.Create": "Creating new +'entitPlu++",
+"Permission:+'entitPlu++.Edit": "Editing the +'entitPlu++",
+"Permission:+'entitPlu++.Delete": "Deleting the +'entitPlu++",
+
+
+//italiano
+"+'entita++:00001": "Esiste già un +'entitL++ con lo stesso nome: {+'campoZero++}",
+"Permission:+'entitPlu++": "+'entita++ Management",
+"Permission:+'entitPlu++.Create": "Creare +'entitPlu++",
+"Permission:+'entitPlu++.Edit": "Modificare +'entitPlu++",
+"Permission:+'entitPlu++.Delete": "Eliminare +'entitPlu++",
+
+
+
++'
