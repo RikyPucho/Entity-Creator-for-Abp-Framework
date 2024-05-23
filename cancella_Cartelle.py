@@ -7,7 +7,7 @@ dom_sha = Dir+"\\domain.shared"
 app = Dir+"\\application"
 app_con = Dir+"\\application.contracts"
 FE = Dir+"\\Front_End"
-scelta = input("sicuro di voler eliminare le cartelle?(y/n): ")
+scelta = input("sicuro di voler eliminare la cartella "Da_Aggiungere"?(y/n): ")
 if scelta == "y":
     if os.path.exists(app):
         shutil.rmtree(app, ignore_errors=True)
