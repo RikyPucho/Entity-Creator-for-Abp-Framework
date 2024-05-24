@@ -1,7 +1,0 @@
-MaglietteStore
-Cliente
-Clienti
-3
-string Name
-string Cognome
-DateTime DataNascita

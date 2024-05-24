@@ -1,0 +1,7 @@
+BookStore
+Author
+Authors
+3
+string Name
+DateTime BirthDate
+string? ShortBio
