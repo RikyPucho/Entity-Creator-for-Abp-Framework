@@ -2,7 +2,7 @@
 
 ## Come utilizzare il programma:
 <ul>
-    <li>Per prima cosa la cartella "Creazione_Entita" deve essere inserita all'interno della cartella del progetto(quindi accanto alla cartella "aspnet-core")</li>
+    <li>Per prima cosa la cartella "Creazione_Entita" deve essere inserita all'interno della cartella del tuo progetto Abp (quindi accanto alla cartella "aspnet-core")</li>
     <li>Se si vuole, aggiungere i dati nel file "input.txt" seguendo le istruzzioni scritte nel file "Come_Scrivere_Input.txt"</li>
     <li>Runnare "program.py"</li>
     <li>Aggiungere nei file specifici le righe di comando presenti nei file della cartlla "Da_Aggiungere"</li>
