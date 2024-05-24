@@ -1,7 +1,7 @@
-MaglietteStore
-Cliente
-Clienti
+BookStore
+Author
+Authors
 3
 string Name
-string Cognome
-DateTime DataNascita
+DateTime BirthDate
+string? ShortBio
