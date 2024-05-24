@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
         #function to read file and create stringa
         def leggi(fil):
-            os.chdir(Dir+"\\NON_TOCCARE\\files")
+            os.chdir(Dir+"\\DONT_TOUCH\\files")
             f = open(str(fil), "r")
             stringa = f.read()
             f.close()
@@ -272,5 +272,5 @@ if __name__ == "__main__":
         # Front End:
         crea("typescript.txt", FE, entita.lower()+".component.ts")
         
-        print("Generazione eseguita!")
+        print("Done!")
         break 
