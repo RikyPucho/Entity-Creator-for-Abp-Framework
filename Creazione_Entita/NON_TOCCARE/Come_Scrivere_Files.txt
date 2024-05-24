@@ -1,11 +1,11 @@
 PER IMPLEMENTARE UNA VARIABILE METTERE +' NOME VARIABILE'++
 ESEMPIO:
-yooooo+'prog'++
+namesace +'prog'++
 OPPURE:
-yooooo+'prog++
+namespace +'prog++
 
 
-QUANDO SI FINISCE IL FILE AGGIUGNERE +'
+ALLA FINE DEL FILE AGGIUGNERE +'
 ESEMPIO:
 ksbe vfrfev +'entita+ rvrbbe
     kgn+'
