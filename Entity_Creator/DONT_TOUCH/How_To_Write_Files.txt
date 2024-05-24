@@ -1,0 +1,11 @@
+TO IMPLEMENT A VARIABLE PUT +'VariableName'++
+EXAMPLE:
+namesace +'prog'++
+OR:
+namespace +'prog++
+
+
+AT THE END OF THE FILE ADD +'
+EXAMPLE:
+ksbe vfrfev +'entita+ rvrbbe
+    kgn+'

@@ -1,17 +1,17 @@
-# Creazione entità su Abp Framework
+# Entity Creator for Abp Framework
 
-## Come utilizzare il programma:
+## How to use the program:
 <ul>
-    <li>Per prima cosa la cartella "Creazione_Entita" deve essere inserita all'interno della cartella del progetto(quindi accanto alla cartella "aspnet-core")</li>
-    <li>Se si vuole, aggiungere i dati nel file "input.txt" seguendo le istruzzioni scritte nel file "Come_Scrivere_Input.txt"</li>
-    <li>Runnare "program.py"</li>
-    <li>Aggiungere nei file specifici le righe di comando presenti nei file della cartlla "Da_Aggiungere"</li>
-    <li>Eliminare le varie cartelle all'interno della cartella "Da_Aggiungere" utilizzando il programma "cancalla_Cartelle.py"</li>
+    <li>First, put the folder "Entity_Creator" in the folder of your Abp project (next to "aspnet-core" folder)</li>
+    <li>If you want, add the data in the "input.txt" file, following the instructions written in the "How_To_Write_Input.txt" file</li>
+    <li>Run "program.py"</li>
+    <li>Add the command lines present in the files in the folder "TO_ADD" to the specific files</li>
+    <li>Delete the folders present in the "To_Add" folder using "delete_Folders.py"</li>
 </ul>
 
-## Alcune regole per evitare errori nell'esecuzione del programma:
+## Some rules to avoid errors in program execution:
 <ul>
-    <li>Non modificare nomi dei file o delle cartelle</li>
-    <li>Non modificare i file all'interno della cartella "NON_TOCCARE", tranne se necessario e solo dopo aver letto le istruzzioni presenti all'interno</li>
-    <li>Seguire tutti i passaggi indicati</li>
+    <li>Don't rename files or folders</li>
+    <li>Don't modify files in the "DONT_TOUCH" folder, except if necessary and only after reading the instructions inside</li>
+    <li>Follow all the steps indicated</li>
 </ul>
