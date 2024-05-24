@@ -1,7 +1,7 @@
 import os
 campi = []
 tipiCampi = []
-scelta = input("Dati nell' input.txt?(se no allora li inserirai nel terminale) (y/n): ")
+scelta = input("Hai inserito i dati nell' input.txt?(se no li dovrai inserire nel terminale) (y/n): ")
 # variabili input
 if scelta.lower() == "y":
     f = open("input.txt", "r")
