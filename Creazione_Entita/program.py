@@ -158,7 +158,7 @@ if __name__ == "__main__":
             while i < len(stringa):
                 if stringa[i] == "+":
                     #se la lettera è + e quella dopo ' allora la parola che segue è una parola chiave
-                    if "'" in stringa[i: i+1] :
+                    if "'" in stringa[i: i+3] :
                         #nella variabile temp custodiamo tutto ciò che c'era da j a prima della parola chiave
                         temp = temp + stringa[j:i]
                         #facciamo tutti i vari controlli per individuare di quale parola chiave si tratta e la rimpiazziamo con ciò che è necessario nella variabile temp
