@@ -3,8 +3,8 @@ if __name__ == "__main__":
     while True:
         campi = []
         tipiCampi = []
-        scelta = input("Hai inserito i dati nell' input.txt?(se no li dovrai inserire nel terminale) (y/n): ")
-        # variabili input
+        scelta = input("Did you insert data in input.txt?(if not you will insert that in the terminal) (y/n): ")
+        # variables input
         if scelta.lower() == "y":
             f = open("input.txt", "r")
             prog = f.readline().replace("\n", "")
@@ -12,7 +12,7 @@ if __name__ == "__main__":
             entitaPlu = f.readline().replace("\n", "")
             nCam = f.readline()
             if(not nCam.isdigit()):
-                print("La quarta riga del file input.txt non contiene un numero")
+                print("The fourth line doesn't contain a number")
                 break
             nCampi = int(nCam)
             for i in range(nCampi):
@@ -22,21 +22,21 @@ if __name__ == "__main__":
                 campi.append(temp[1])
             f.close()
         else:
-            prog = input("Nome progetto: ")
-            entita = input("Nome entità (con la prima lettera maiuscola): ")
-            entitaPlu = input("Nome entità al plurale (con la prima lettera maiuscola): ") 
-            nCam = input("Numero campi: ")
+            prog = input("Project's name: ")
+            entita = input("Entity's name (with the first letter capitalized): ")
+            entitaPlu = input("Plural entity's name (with the first letter capitalized): ") 
+            nCam = input("Entity field's number: ")
             if(not nCam.isdigit()):
-                print(nCam+" non è un numero")
+                print(nCam+" isn't a digit")
                 break
             nCampi = int(nCam)
             for i in range(nCampi):
-                tipiCampi.append(input("Tipo campo "+ str(i+1)+ ": "))
-                campi.append(input("Nome campo "+ str(i+1)+ ": "))
+                tipiCampi.append(input("Field's type "+ str(i+1)+ ": "))
+                campi.append(input("Field's name "+ str(i+1)+ ": "))
 
-        # variabili 
+        # variables 
         Dir = os.getcwd()
-        DirP = Dir[:-16]
+        DirP = Dir[:-14]
         DirP += "aspnet-core\\src\\"
         usi = "using "+prog+"."+entitaPlu+";"
         ns = "namespace "+prog+"."+entitaPlu+";"
@@ -48,20 +48,20 @@ if __name__ == "__main__":
         Man = entita+"Manager"
         man = entita.lower()+"Manager"
         man_ = "_"+man
-        #direttive
+        # directives
         domE = DirP+prog+".Domain\\"+entitaPlu
         dom_shaE = DirP+prog+".Domain.Shared\\"+entitaPlu
         appE = DirP+prog+".Application\\"+entitaPlu
         app_conE = DirP+prog+".Application.Contracts\\"+entitaPlu
         efcE = DirP+prog+".EntityFrameworkCore\\"+entitaPlu
-        da_agg = Dir+"\\Da_Aggiungere"
+        da_agg = Dir+"\\TO_ADD"
         dom = da_agg+"\\Domain"
         efc = da_agg+"\\EntityFrameworkCore"
         dom_sha = da_agg+"\\Domain.Shared"
         app = da_agg+"\\Application"
         app_con = da_agg+"\\Application.Contracts"
         FE = da_agg+"\\Front_End"
-        #funzioni utilizzate per la scrittura dei campi:
+        #functions used to writing the fields:
         def campiGet():
             cam = ""
             for i in range(nCampi):
@@ -134,34 +134,30 @@ if __name__ == "__main__":
                     cam+=",\n"
             return cam
 
-        #funzione crezione file
+        #function creation file
         def crea(fil, path, nom):
-            # leggi file
+            # read file
             stringa = leggi(fil)
-            # apertura cartella
+            # open folder
             os.chdir(path)
-            # creazione e scrittura file
+            # creation and writing file
             f = open(nom, "w")
             f.write(stringa)
             f.close()
 
-        #funione lettura file e crezione stringa
+        #function to read file and create stringa
         def leggi(fil):
-            os.chdir(Dir+"\\NON_TOCCARE\\files")
+            os.chdir(Dir+"\\DONT_TOUCH\\files")
             f = open(str(fil), "r")
             stringa = f.read()
             f.close()
             i = 0
             j = 0
             temp = ""
-            #ciclo per ogni lettera
             while i < len(stringa):
                 if stringa[i] == "+":
-                    #se la lettera è + e quella dopo ' allora la parola che segue è una parola chiave
                     if "'" in stringa[i: i+1] :
-                        #nella variabile temp custodiamo tutto ciò che c'era da j a prima della parola chiave
                         temp = temp + stringa[j:i]
-                        #facciamo tutti i vari controlli per individuare di quale parola chiave si tratta e la rimpiazziamo con ciò che è necessario nella variabile temp
                         if "prog" in stringa[i:i+7]:
                             temp += prog
                         elif "entita" in stringa[i:i+9]:
@@ -213,15 +209,12 @@ if __name__ == "__main__":
                         elif "campiForm" in stringa[i:i+11]:
                             temp += campiForm()
 
-                    #la lettera è + ed è seguita da + allora vuol dirre che ci troviamo dopo la parola chiave
                     elif "+" in stringa[i+1]:
-                        #impostiamo j sulla lettera subito dopo ++
                         j = i +2        
                 i+=1
-            #ritorna il file con tutte le parole chiavi sostituite appositamente
             return temp
 
-        #  CREAZIONE CARTELLE E CONTROLLO ESISTENZA
+        #  Folders creation
         if not os.path.exists(appE):
             os.makedirs(appE)
         if not os.path.exists(app_conE):
@@ -246,7 +239,7 @@ if __name__ == "__main__":
         if not os.path.exists(FE):
             os.makedirs(FE)
 
-        #CREAZIONE FILE:
+        # Files creation:
 
         # DOMAIN LAYER:
 
@@ -279,5 +272,5 @@ if __name__ == "__main__":
         # Front End:
         crea("typescript.txt", FE, entita.lower()+".component.ts")
         
-        print("Generazione eseguita!")
+        print("Done!")
         break 

@@ -1,0 +1,15 @@
+The lines have to contain in this order:
+1. Project's name
+2. Entity's name with the first letter capitalized 
+3. Plural entity's name with the first letter capitalized 
+4. Entity field's number
+5 and next. Type of the field and the name of it
+
+Example:    
+BookStore
+Author
+Authors
+3
+string Name
+DateTime BirthDate
+string? ShortBio

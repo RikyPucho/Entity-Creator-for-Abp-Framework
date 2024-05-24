@@ -1,0 +1,16 @@
+prog = Project
+entita = Entity
+entitPlu = Entities
+entitL = entity
+entitaPL = entities
+Dir = directive file program
+usi = using Project.Enity;
+ns = namespace Project.Entity;
+dto = EntityDto
+Rep = IEntityRepository
+rep- = entityRepository
+rep_ = _entityRepository
+Man = EntityManagaer
+man- = entityManager
+man_ = _entityManager
+campoZero = Name

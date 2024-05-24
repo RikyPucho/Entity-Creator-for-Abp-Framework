@@ -1,13 +1,13 @@
 import os, shutil
 Dir = os.getcwd()
-Dir += "\\Da_Aggiungere"
+Dir += "\\TO_ADD"
 dom = Dir+"\\domain"
 efc = Dir+"\\EntityFrameworkCore"
 dom_sha = Dir+"\\domain.shared"
 app = Dir+"\\application"
 app_con = Dir+"\\application.contracts"
 FE = Dir+"\\Front_End"
-scelta = input("sicuro di voler eliminare la cartella 'Da_Aggiungere'?(y/n): ")
+scelta = input("are you sure to delete the folder 'TO_ADD'?(y/n): ")
 if scelta == "y":
     if os.path.exists(app):
         shutil.rmtree(app, ignore_errors=True)
@@ -21,5 +21,6 @@ if scelta == "y":
         shutil.rmtree(efc, ignore_errors=True)
     if os.path.exists(FE):
         shutil.rmtree(FE, ignore_errors=True)
+    print("done")
 else:
-    print("ok non le cancellerò")
+    print("ok i won't delete")
