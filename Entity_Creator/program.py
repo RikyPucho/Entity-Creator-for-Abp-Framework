@@ -10,7 +10,7 @@ if __name__ == "__main__":
             prog = f.readline().replace("\n", "")
             entita = f.readline().replace("\n", "")
             entitaPlu = f.readline().replace("\n", "")
-            nCam = f.readline()
+            nCam = f.readline().replace("\n", "")
             if(not nCam.isdigit()):
                 print("The fourth line doesn't contain a number")
                 break
@@ -156,7 +156,7 @@ if __name__ == "__main__":
             temp = ""
             while i < len(stringa):
                 if stringa[i] == "+":
-                    if "'" in stringa[i: i+1] :
+                    if "'" in stringa[i: i+3] :
                         temp = temp + stringa[j:i]
                         if "prog" in stringa[i:i+7]:
                             temp += prog
