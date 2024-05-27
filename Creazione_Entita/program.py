@@ -10,7 +10,7 @@ if __name__ == "__main__":
             prog = f.readline().replace("\n", "")
             entita = f.readline().replace("\n", "")
             entitaPlu = f.readline().replace("\n", "")
-            nCam = f.readline()
+            nCam = f.readline().replace("\n", "")
             if(not nCam.isdigit()):
                 print("La quarta riga del file input.txt non contiene un numero")
                 break
